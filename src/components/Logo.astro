@@ -1,0 +1,22 @@
+<div
+  class="cursor-pointer bg-black rounded p-2 absolute top-2 right-4 text-white text-lg font-bold tracking-2 z-10 logo_luke flex align-items-center"
+>
+  {"<"}L<span class="max-w-0 overflow-hidden inline-block letters">uke.</span> J<span
+    class="max-w-0 overflow-hidden inline-block letters">oliat</span
+  >
+  {"/>"}
+</div>
+
+<script>
+  const logo = document.querySelector(".logo_luke");
+  logo.addEventListener("mouseover", (e) => {
+    document
+      .querySelectorAll(".letters")
+      .forEach((e) => e.classList.add("animate-expand"));
+  });
+  logo.addEventListener("mouseout", (e) => {
+    document
+      .querySelectorAll(".letters")
+      .forEach((e) => e.classList.remove("animate-expand"));
+  });
+</script>

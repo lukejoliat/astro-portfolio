@@ -1,18 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
+const prop = "ha";
 ---
 
-<BaseLayout title = "Resume">
+<BaseLayout title="Resume">
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Profile</div>
   </div>
 
   <div class="mb-10 text-justify">
-    Engineer in Informatics Science with 6 years + of experience in software development. Dominion of various programming
-    languages, frameworks, CMS and graphics engines. Experience in WEB design and development. Work with Data Base handled
-    systems, as well as design, normalization and migration. Knowledge of work with graphic design tools for image
-    manipulation , User Interfaces design, Web sites, logos and other ones.
+    Engineer in Informatics Science with 6 years + of experience in software
+    development. Dominion of various programming languages, frameworks, CMS and
+    graphics engines. Experience in WEB design and development. Work with Data
+    Base handled systems, as well as design, normalization and migration.
+    Knowledge of work with graphic design tools for image manipulation , User
+    Interfaces design, Web sites, logos and other ones.
   </div>
 
   <div class="mb-5">
@@ -55,6 +58,31 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
       subtitle="From 2017 to 2018 at CEDIN, UCI, Habana, Cuba"
       desc="System of steps of primary information at a company. personnel's steps, control of access, impression of credentials, steps of locales, structure and composition. Technologies: Php,Symfony 3.3 , Gitlab, PostgreSQL, , Boostrap 3, JQuery, HTML,CSS, JavaScript"
     />
+    <TimeLineElement
+      title="Full Stack Dev, UI/UX Designer and Software Architect at Primary Information System"
+      subtitle="From 2017 to 2018 at CEDIN, UCI, Habana, Cuba"
+      desc="System of steps of primary information at a company. personnel's steps, control of access, impression of credentials, steps of locales, structure and composition. Technologies: Php,Symfony 3.3 , Gitlab, PostgreSQL, , Boostrap 3, JQuery, HTML,CSS, JavaScript"
+    />
+    <TimeLineElement
+      title="Full Stack Dev, UI/UX Designer and Software Architect at Primary Information System"
+      subtitle="From 2017 to 2018 at CEDIN, UCI, Habana, Cuba"
+      desc="System of steps of primary information at a company. personnel's steps, control of access, impression of credentials, steps of locales, structure and composition. Technologies: Php,Symfony 3.3 , Gitlab, PostgreSQL, , Boostrap 3, JQuery, HTML,CSS, JavaScript"
+    />
+    <TimeLineElement
+      title="Full Stack Dev, UI/UX Designer and Software Architect at Primary Information System"
+      subtitle="From 2017 to 2018 at CEDIN, UCI, Habana, Cuba"
+      desc="System of steps of primary information at a company. personnel's steps, control of access, impression of credentials, steps of locales, structure and composition. Technologies: Php,Symfony 3.3 , Gitlab, PostgreSQL, , Boostrap 3, JQuery, HTML,CSS, JavaScript"
+    />
+    <TimeLineElement
+      title="Full Stack Dev, UI/UX Designer and Software Architect at Primary Information System"
+      subtitle="From 2017 to 2018 at CEDIN, UCI, Habana, Cuba"
+      desc="System of steps of primary information at a company. personnel's steps, control of access, impression of credentials, steps of locales, structure and composition. Technologies: Php,Symfony 3.3 , Gitlab, PostgreSQL, , Boostrap 3, JQuery, HTML,CSS, JavaScript"
+    />
+    <TimeLineElement
+      title="Full Stack Dev, UI/UX Designer and Software Architect at Primary Information System"
+      subtitle="From 2017 to 2018 at CEDIN, UCI, Habana, Cuba"
+      desc="System of steps of primary information at a company. personnel's steps, control of access, impression of credentials, steps of locales, structure and composition. Technologies: Php,Symfony 3.3 , Gitlab, PostgreSQL, , Boostrap 3, JQuery, HTML,CSS, JavaScript"
+    />
   </div>
 
   <div class="mb-5">
@@ -63,10 +91,17 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
   <ul class="list-disc mx-6 mb-10 grid gap-2">
     <li>
-      <a href="https://www.efset.org/cert/DxtNKG" target="_blank"> EF SET English Certificate 74/100 (C2 Proficient)</a>
+      <a href="https://www.efset.org/cert/DxtNKG" target="_blank">
+        EF SET English Certificate 74/100 (C2 Proficient)</a
+      >
     </li>
     <li>
-      <a href="https://certiprof.com/pages/scrum-foundation-professional-certificate-sfpc-en-sp" target="_blank"> Scrum Foundation Professional Certificate (SFPC)</a>
+      <a
+        href="https://certiprof.com/pages/scrum-foundation-professional-certificate-sfpc-en-sp"
+        target="_blank"
+      >
+        Scrum Foundation Professional Certificate (SFPC)</a
+      >
     </li>
   </ul>
 
@@ -113,3 +148,34 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>KdenLive</li>
   </ul>
 </BaseLayout>
+
+<script>
+  const callback = function (entries) {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target
+          .querySelector(".experience__data")
+          .classList.add("animate-fadeIn");
+        setTimeout(() => {
+          entry.target
+            .querySelector(".education__dot")
+            .classList.add("animate-pulsing-dot");
+        }, 500);
+
+        if (entry.target.previousElementSibling) {
+          entry.target.previousElementSibling
+            .querySelector(".education__line")
+            .classList.add("animate-growing-line");
+        }
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(callback, { threshold: 1.0 });
+
+  const targets = document.querySelectorAll(".js-show-on-scroll");
+  targets.forEach(function (target) {
+    target.querySelector(".education__line").classList.add("h-0");
+    observer.observe(target);
+  });
+</script>

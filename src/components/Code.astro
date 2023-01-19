@@ -1,0 +1,88 @@
+<div>
+  <figure
+    class="my-10 mx-6 xs:mx-auto max-w-3xl min-h-[22rem] grid grid-cols-9 grid-rows-[repeat(6,_auto)] sm:grid-rows-6 relative"
+  >
+    <figcaption class="sr-only">
+      src/pages/markdown-pages.md code example
+    </figcaption>
+
+    <div
+      class="col-span-8 sm:col-span-4 col-start-1 sm:col-start-1 row-start-1 sm:row-start-2 row-span-2 sm:row-span-4 opacity-90"
+    >
+      <div
+        class="rounded-lg shadow-2xl border border-primary-400 shadow-primary-400/50 bg-primary-200/70 h-full overflow-hidden"
+      >
+        <div
+          class="flex border-b border-primary-400 items-center pr-12"
+          aria-hidden="true"
+        >
+          <!-- Application buttons -->
+          <div class="flex space-x-1 px-2">
+            <div class="rounded-full w-2.5 h-2.5 bg-gray-400"></div>
+            <div class="rounded-full w-2.5 h-2.5 bg-gray-400"></div>
+            <div class="rounded-full w-2.5 h-2.5 bg-gray-400"></div>
+          </div>
+          <!-- URL bar -->
+          <div
+            class="flex grow items-center space-x-2 col-span-4 rounded text-xs m-1 p-1 bg-white text-neutral-500 select-none"
+          >
+            <svg
+              width="12"
+              height="12"
+              class="astro-XUBBBHZE"
+              astro-icon="carbon:locked"
+            >
+              <use xlink:href="#astroicon:carbon:locked" width="12" height="12"
+              ></use>
+            </svg>
+            <span class="astro-XUBBBHZE"></span>
+          </div>
+        </div>
+        <!-- Webpage -->
+        <div class="p-4 pb-8 text-neutral-200 bg-neutral-900 h-full">
+          <div class="font-black">
+            <span
+              class="typer text-white"
+              id="main"
+              data-words="Creating pages with Markdown"
+              data-delay="100"
+              data-colors="white"
+              data-deleteDelay="1000"></span><span data-owner="main"></span>
+          </div><div class="text-xs mt-3 space-y-3 leading-relaxed">
+            <p>Creating a page using Markdown is <em>easy</em> with Astro!</p>
+            <p>
+              Add a <code class="rounded bg-white/10 px-1 py-0.5 -my-0.5"
+                >.md</code
+              > file to your <code
+                class="rounded bg-white/10 px-1 py-0.5 -my-0.5">pages</code
+              > directory and Astro will turn it into a page on your site. You can
+              specify an Astro component in frontmatter to use as a page layout.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section
+      class="mt-5 sm:mt-0 code-sample rounded overflow-hidden col-start-2 sm:col-start-4 col-span-8 sm:col-span-6 row-span-5 row-start-3 sm:row-span-full opacity-95 flex flex-col justify-items-stretch border border-primary-400/50 shadow-2xl shadow-primary-500/50"
+    >
+      <h3
+        class="text-center text-xs p-1 whitespace-nowrap bg-black text-neutral-50/80 border-b border-primary-400/30"
+      >
+        src/pages/markdown-pages.md
+      </h3>
+      <pre
+        class="astro-code h-full"
+        style="background-color: #0d1117; overflow-x: auto;"><code><span class="line">  <span style="color: #C9D1D9">---</span></span>
+  <span class="line"><span style="color: #7EE787">title</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF"><span class="typer text-white" id="main" data-words="Creating pages with Markdown" data-delay="100" data-colors="white" data-deleteDelay="1000" /><span class="cursor" data-owner="main" /></span></span>
+  <span class="line"><span style="color: #7EE787">layout</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">../layouts/Base.astro</span></span>
+  <span class="line"><span style="color: #C9D1D9">---</span></span>
+  <span class="line" />
+  <span class="line"><span style="color: #C9D1D9">Creating a page using Markdown is </span><span style="color: #C9D1D9">_easy_</span><span style="color: #C9D1D9"> with Astro!</span></span>
+  <span class="line" />
+  <span class="line"><span style="color: #C9D1D9">Add a </span><span style="color: #79C0FF">`.md`</span><span style="color: #C9D1D9"> file to your </span><span style="color: #79C0FF">`pages`</span><span style="color: #C9D1D9"> directory and Astro</span></span>
+  <span class="line"><span style="color: #C9D1D9">will turn it into a page on your site. You can specify</span></span>
+  <span class="line"><span style="color: #C9D1D9">an Astro component in frontmatter to use as a page</span></span>
+  <span class="line"><span style="color: #C9D1D9">layout.</span></span></code></pre>
+    </section>
+  </figure>
+</div>
