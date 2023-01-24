@@ -5,4 +5,12 @@
 <path d="M34 87H106" stroke="white" stroke-width="5" stroke-linecap="round"/>
 <path d="M29 94H111" stroke="white" stroke-width="5" stroke-linecap="round"/>
 <path d="M44 109L95 109" stroke="white" stroke-width="7" stroke-linecap="round"/>
+<style>
+    @media (prefers-color-scheme: light) {
+      /* light theme styles */
+      path {
+          stroke: black;
+      }
+    }
+</style>
 </svg>
