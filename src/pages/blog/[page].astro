@@ -4,7 +4,9 @@ import HorizontalCard from "../../components/HorizontalCard.astro";
 
 export async function getStaticPaths({ paginate }) {
   const posts = (await Astro.glob("./*.{md,mdx}")).sort(
-    (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+    (a, b) =>
+      new Date(b.frontmatter.pubDate).valueOf() -
+      new Date(a.frontmatter.pubDate).valueOf()
   );
 
   return paginate(posts, { pageSize: 10 });
@@ -12,10 +14,10 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<BaseLayout title = "Blog">
+<BaseLayout title="Blog">
   <ul>
     <!--List the array of astronaut info-->
-    {page.data.map(( post ) => (
+    <!-- {page.data.map(( post ) => (
      <HorizontalCard
         title={post.frontmatter.title}
         img={post.frontmatter.heroImage}
@@ -25,13 +27,78 @@ const { page } = Astro.props;
       />
 	  <div class="divider my-0"></div>
 
-    ))}
+    ))} -->
+    <>
+      <HorizontalCard
+        title={"Get Amped about Amplify!"}
+        img={"/amp.png"}
+        desc={"An exploration of Amazon’s platform for building “sophisticated cloud-powered apps."}
+        url={"https://medium.com/slalom-technology/get-amped-about-amplify-7354c751e6d4"}
+        target="_self"
+      />
+      <div class="divider my-0"></div>
+    </>
+
+    <>
+      <HorizontalCard
+        title={"Do we still need JavaScript frameworks?"}
+        img={"/frameworks.png"}
+        desc={"I investigate just how easy it is to develop a complex front end application without a front end framework."}
+        url={"https://medium.com/free-code-camp/do-we-still-need-javascript-frameworks-42576735949b"}
+        target="_self"
+      />
+      <div class="divider my-0"></div>
+    </>
+
+    <>
+      <HorizontalCard
+        title={"Gatsby: The ultimate guide with examples"}
+        img={"/gatsby-js-tutorial.png"}
+        desc={"Everything you need to know about the popular React-based framework."}
+        url={"https://blog.logrocket.com/gatsby-ultimate-guide-examples/"}
+        target="_self"
+      />
+    </>
   </ul>
 
-
-    <div class="flex justify-between">
-      {page.url.prev ? <a href={page.url.prev} class="btn btn-ghost my-10 mx-5" > <svg class="h-6 w-6 fill-current md:h-8 md:w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path></svg>  Recent posts</a> : <div></div>}
-      {page.url.next ? <a href={page.url.next} class="btn btn-ghost my-10 mx-5">Older Posts <svg class="h-6 w-6 fill-current md:h-8 md:w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"> <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg></a> : <div></div>}
-    </div>
-
+  <div class="flex justify-between">
+    {
+      page.url.prev ? (
+        <a href={page.url.prev} class="btn btn-ghost my-10 mx-5">
+          {" "}
+          <svg
+            class="h-6 w-6 fill-current md:h-8 md:w-8"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+          </svg>{" "}
+          Recent posts
+        </a>
+      ) : (
+        <div />
+      )
+    }
+    {
+      page.url.next ? (
+        <a href={page.url.next} class="btn btn-ghost my-10 mx-5">
+          Older Posts{" "}
+          <svg
+            class="h-6 w-6 fill-current md:h-8 md:w-8"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            {" "}
+            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+          </svg>
+        </a>
+      ) : (
+        <div />
+      )
+    }
+  </div>
 </BaseLayout>
