@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Projects from "../components/Projects.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 ---
 
@@ -8,13 +9,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     <div class="text-3xl w-full font-bold mb-5">Some Recent Projects</div>
   </div>
 
-  <HorizontalCard
-    title="Notes App With Apollo And React"
-    img="/notes-app.png"
-    desc="Created a notes app with Apollo and React. Utilizes realtime updates with event batching."
-    url="https://github.com/lukejoliat/apple-notes-apollo"
-    badge="NEW"
-  />
+  <Projects />
   <!--  <div class="divider my-0"></div>
   <HorizontalCard
     title="Demo Project 2"

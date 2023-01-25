@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import Code from "../components/Code.astro";
+import Projects from "../components/Projects.astro";
 
 const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   (a, b) =>
@@ -23,10 +24,10 @@ const last_posts = posts.slice(0, 3);
     </div>
     <div class="py-2">
       <text class="text-lg">
-        I made this template for everyone who needs to create a personal website
-        easily and quickly. This template includes Project Section, CV Section,
-        Store, Paginated Blog, RSS Feed, SEO Friendly, Responsive Desing and 29
-        Visual themes. I hope you find it useful!
+        I am a Full-Stack Developer with 8+ years of experience in software
+        engineering, web development, and application architecture. Proficient
+        with various programming languages, frameworks, CMS platforms, and
+        design technology. I am lucky to be working in a field I love!
       </text>
     </div>
     <div class="mt-8">
@@ -51,28 +52,7 @@ const last_posts = posts.slice(0, 3);
     </div>
   </div>
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
+  <Projects />
 
   <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
