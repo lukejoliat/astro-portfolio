@@ -29,6 +29,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
       </a>
     </div>
     <ul>
+      {currentPath}
       <!-- Sidebar content here -->
       <MenuLink path="/" active={currentPath === "" ? true : false}>
         Home
@@ -48,11 +49,6 @@ const currentPath = pathname.slice(1); // remove the first "/"
       <MenuLink path="/cv" active={currentPath === "cv" ? true : false}>
         CV
       </MenuLink>
-      <!-- <li>
-        <a href="https://manuelernestog.github.io/paylink/" target="_blank"
-          >Support my Work</a
-        >
-      </li> -->
       <MenuLink path="mailto:contact.lukejoliat@gmail.com">Contact</MenuLink>
     </ul>
     <div class="grow"></div>
