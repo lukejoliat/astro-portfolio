@@ -8,9 +8,6 @@ export async function getStaticPaths({ paginate }) {
       new Date(b.frontmatter.pubDate).valueOf() -
       new Date(a.frontmatter.pubDate).valueOf()
   );
-  const pages = (await Astro.glob("../*.astro")).map((p) => {
-    console.log(JSON.stringify(p.file));
-  });
 
   return paginate(posts, { pageSize: 10 });
 }
