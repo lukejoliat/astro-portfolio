@@ -29,26 +29,15 @@ const currentPath = pathname.slice(1); // remove the first "/"
       </a>
     </div>
     <ul>
-      {currentPath}
       <!-- Sidebar content here -->
-      <MenuLink path="/" active={currentPath === "" ? true : false}>
-        Home
-      </MenuLink>
-      <MenuLink
-        path="/projects"
-        active={currentPath === "projects" ? true : false}
-      >
+      <MenuLink path="/" active={currentPath === ""}>Home</MenuLink>
+      <MenuLink path="/projects" active={currentPath === "projects/"}>
         Projects
       </MenuLink>
-      <MenuLink
-        path="/blog/1"
-        active={currentPath.includes("blog") ? true : false}
-      >
+      <MenuLink path="/blog/1" active={currentPath.includes("blog")}>
         Blog
       </MenuLink>
-      <MenuLink path="/cv" active={currentPath === "cv" ? true : false}>
-        CV
-      </MenuLink>
+      <MenuLink path="/cv" active={currentPath === "cv/"}>CV</MenuLink>
       <MenuLink path="mailto:contact.lukejoliat@gmail.com">Contact</MenuLink>
     </ul>
     <div class="grow"></div>
