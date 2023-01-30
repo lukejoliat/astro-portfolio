@@ -1,0 +1,12 @@
+---
+export interface Props {
+  path: string;
+  active?: boolean;
+}
+
+const { path, active } = Astro.props;
+---
+
+<li>
+  <a href={path} class={`${active ? "active" : null} mt-1`}> <slot /></a>
+</li>
