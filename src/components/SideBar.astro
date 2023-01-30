@@ -1,4 +1,6 @@
 ---
+import MenuLink from "./MenuLink.astro";
+
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
@@ -28,24 +30,30 @@ const currentPath = pathname.slice(1); // remove the first "/"
     </div>
     <ul>
       <!-- Sidebar content here -->
-      <li><a href="/" class={pathname === "/" ? "active" : null}>Home</a></li>
-      <li>
-        <a href="/projects" class={pathname === "/projects" ? "active" : null}
-          >Projects</a
-        >
-      </li>
-      <li>
-        <a href="/blog/1" class={pathname.includes("blog") ? "active" : null}
-          >Blog</a
-        >
-      </li>
-      <li><a href="/cv" class={pathname === "/cv" ? "active" : null}>CV</a></li>
-      <li>
+      <MenuLink path="/" active={currentPath === "" ? true : false}>
+        Home
+      </MenuLink>
+      <MenuLink
+        path="/projects"
+        active={currentPath === "projects" ? true : false}
+      >
+        Projects
+      </MenuLink>
+      <MenuLink
+        path="/blog/1"
+        active={currentPath.includes("blog") ? true : false}
+      >
+        Blog
+      </MenuLink>
+      <MenuLink path="/cv" active={currentPath === "cv" ? true : false}>
+        CV
+      </MenuLink>
+      <!-- <li>
         <a href="https://manuelernestog.github.io/paylink/" target="_blank"
           >Support my Work</a
         >
-      </li>
-      <li><a href="mailto:contact.lukejoliat@gmail.com">Contact</a></li>
+      </li> -->
+      <MenuLink path="mailto:contact.lukejoliat@gmail.com">Contact</MenuLink>
     </ul>
     <div class="grow"></div>
     <div class="social-icons px-4 my-2 flex self-center">
