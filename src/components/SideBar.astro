@@ -31,13 +31,13 @@ const currentPath = pathname.slice(1); // remove the first "/"
     <ul>
       <!-- Sidebar content here -->
       <MenuLink path="/" active={currentPath === ""}>Home</MenuLink>
-      <MenuLink path="/projects" active={currentPath === "projects/"}>
+      <MenuLink path="/projects" active={currentPath.includes("projects")}>
         Projects
       </MenuLink>
       <MenuLink path="/blog/1" active={currentPath.includes("blog")}>
         Blog
       </MenuLink>
-      <MenuLink path="/cv" active={currentPath === "cv/"}>CV</MenuLink>
+      <MenuLink path="/cv" active={currentPath.includes("cv")}>CV</MenuLink>
       <MenuLink path="mailto:contact.lukejoliat@gmail.com">Contact</MenuLink>
     </ul>
     <div class="grow"></div>

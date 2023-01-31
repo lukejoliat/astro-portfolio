@@ -46,7 +46,7 @@ module.exports = {
         },
       },
       animation: {
-        fadeIn: "fadeIn 2s ease-in forwards",
+        fadeIn: "fadeIn .75s ease-in forwards",
         "waving-hand": "wave 2s linear infinite",
         "pulsing-dot": "pulse 0.6s forwards",
         "growing-line": "length 0.6s forwards",
