@@ -1,5 +1,7 @@
 ---
 import MenuLink from "./MenuLink.astro";
+import { Image, Picture } from "@astrojs/image/components";
+import lukeImage from "/public/luke.png";
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
@@ -14,9 +16,9 @@ const currentPath = pathname.slice(1); // remove the first "/"
           class="avatar transition ease-in-out w-1/2 hover:scale-[102%] block m-auto mt-3 mb-6 overflow-visible"
         >
           <div class="relative !overflow-visible">
-            <img
+            <Image
               class="mask mask-circle bg-gray-500 relative z-10 bg-opacity-40"
-              src="/luke.png"
+              src={lukeImage}
               alt="profile image"
             />
             <div
