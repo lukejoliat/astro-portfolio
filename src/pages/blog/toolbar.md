@@ -20,7 +20,7 @@ This scaling is a function of the mouse distance. Or, it would have to be in the
 
 I knew I wanted to practice composing reusable hooks and functions in addition to solving to problem, so I started with the first smallest unit of work that came to mind.
 
-`useMousPosition`
+`useMousePosition`
 
 I created a hook to detect the mouse position, since I knew this would be needed to determine the mouse’s distances from any given icon.
 
